@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Remindly - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .home-container {
+      max-width: 420px;
+      margin: 100px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+      text-align: center;
+    }
+
+    .home-container h2 {
+      margin-bottom: 20px;
+      color: #2563EB;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .home-container button {
+      width: 100%;
+      margin: 12px 0;
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: linear-gradient(45deg, #2563EB, #1E40AF);
+      color: white;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .home-container button:hover {
+      transform: scale(1.03);
+      background: linear-gradient(45deg, #1E40AF, #1E3A8A);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero-title">
+    <h1>REMINDLY</h1>
+    <p>Plan smarter • Remember better • Never miss what matters</p>
+  </div>
+
+  <div class="home-container">
+    <h2>What do you want to do?</h2>
+
+    <button onclick="window.location.href='insert.html'">
+      ➕ Add / Manage Reminders
+    </button>
+
+    <button onclick="window.location.href='search.html'">
+      🔍 Search Reminders by Location
+    </button>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+</body>
+</html>

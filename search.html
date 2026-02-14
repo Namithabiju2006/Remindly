@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Search Reminders by Location</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="hero-title">
+    <h1>REMINDLY</h1>
+    <p>Find reminders by location</p>
+  </div>
+
+  <div class="form">
+    <input id="searchLocationInput" placeholder="Enter location (e.g. Kottayam)">
+    <button onclick="searchByLocation()">Find Reminders</button>
+
+    <h3>Results</h3>
+    <div id="results"></div>
+  </div>
+
+  <script>
+    const API_BASE = "http://localhost:3000/api";
+
+    async function searchByLocation() {
+      const place = document.getElementById("searchLocationInput").value.trim();
+
+      if (!place) {
+        alert("Enter a location like Kottayam");
+        return;
+      }
+
+      const res = await fetch(`${API_BASE}/reminders/search/${encodeURIComponent(place)}`);
+      const reminders = await res.json();
+
+      const container = document.getElementById("results");
+
+      container.innerHTML = reminders.length
+        ? reminders.map(createReminderCard).join("")
+        : `<p>No reminders found for "${place}".</p>`;
+    }
+
+    function createReminderCard(r) {
+      const colors = {
+        High: "#EF4444",
+        Medium: "#F59E0B",
+        Low: "#10B981"
+      };
+
+      const formattedTime = r.time
+        ? new Date(r.time).toLocaleString()
+        : "No time set";
+
+      return `
+        <div class="reminderCard" style="border-left:6px solid ${colors[r.priority]}">
+          <div class="reminderTitle">${r.text}</div>
+          <div class="reminderLocation">📍 ${r.location || "No location"}</div>
+          <div class="reminderTime">⏰ ${formattedTime}</div>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>

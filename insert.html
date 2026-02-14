@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+<div class="hero-title">
+    <h1>REMINDLY</h1>
+    <p>Plan smarter • Remember better • Never miss what matters</p>
+</div>
+
+<div class="form">
+
+<input id="task" placeholder="Enter task">
+<input type="datetime-local" id="time">
+
+<select id="priority">
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+</select>
+
+<input id="searchBox" placeholder="Search location">
+<button onclick="searchLocation()">Search</button>
+
+<div id="map" style="height:300px;"></div>
+
+<button onclick="getCurrentLocation()">Use My Location</button>
+<button onclick="saveReminder()">Save Reminder</button>
+
+<!-- Hidden fields -->
+<input type="hidden" id="lat">
+<input type="hidden" id="lng">
+<input type="hidden" id="locationName">
+
+<h3>Saved Reminders</h3>
+<div id="savedReminders"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script>
+const SUPABASE_URL = "https://ixlufxpcehhcpuftqiiw.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4bHVmeHBjZWhoY3B1ZnRxaWl3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA5OTQwODUsImV4cCI6MjA4NjU3MDA4NX0.UT1nbsZb0bslagBn4UzRwcci81XyZJWe28TJ38AMBfc";
+
+const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+</script>
+
+
+<script src="map.js"></script>
+<script src="app.js"></script>
+<script src="remainderengine.js"></script>
+
+</div>
+
+</body>
+</html>
+
