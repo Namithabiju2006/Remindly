@@ -1,4 +1,5 @@
 📍 REMINDLY
+
 Plan smarter • Remember better • Never miss what matters
 
 👥 Basic Details
@@ -172,6 +173,7 @@ Namitha Biju: Frontend architecture, Leaflet.js map integration, and UI/UX desig
 Ditha J S: Database design with Supabase, API integration, and Haversine proximity logic.
 
 Made with ❤️ at TinkerHub
+
 
 
 
