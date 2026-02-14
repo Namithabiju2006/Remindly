@@ -2,12 +2,12 @@
 
 Plan smarter • Remember better • Never miss what matters
 
-👥 Basic Details
+
 Team Name: Novacoders
 
 Team Members:
 
-Member 1: Namitha Biju - Rajiv Gandhi Institute of Technology
+Member 1: Namitha Biju - Rajiv Gandhi Institute of Technology,Kottayam
 
 Member 2: Ditha J S - Rajiv Gandhi Institute of Technology, Kottayam
 
@@ -173,6 +173,7 @@ Namitha Biju: Frontend architecture, Leaflet.js map integration, and UI/UX desig
 Ditha J S: Database design with Supabase, API integration, and Haversine proximity logic.
 
 Made with ❤️ at TinkerHub
+
 
 
 
