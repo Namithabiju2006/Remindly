@@ -10,7 +10,7 @@ Member 1: Namitha Biju - Rajiv Gandhi Institute of Technology
 
 Member 2: Ditha J S - Rajiv Gandhi Institute of Technology, Kottayam
 
-Hosted Project Link: http://127.0.0.1:5500/index.html (Local Development Link)
+Hosted Project Link: 
 
 📖 Project Description
 Remindly addresses the "Environmental Disconnect" found in traditional productivity tools. Standard alarms often trigger at the wrong time (e.g., reminding you to buy groceries while you are still at your desk).
@@ -77,6 +77,24 @@ Image 3
 <img width="1505" height="911" alt="3" src="https://github.com/user-attachments/assets/029853af-e569-463d-8aab-2ecd7e2e37c1" />
 Image 4
 <img width="1642" height="758" alt="Screenshot 2026-02-14 083501" src="https://github.com/user-attachments/assets/6cbd2c93-d679-443d-a0a7-d8f70e31b511" />
+System Architecture Diagram Components
+"C:\Users\LENOVO\Downloads\WhatsApp Image 2026-02-14 at 10.25.13 AM.jpeg"
+A professional diagram for this stack usually consists of three main tiers:
+Client Layer (The Browser): * UI Component: Built with HTML5 and CSS3 (Glassmorphism design).
+Logic Component: Vanilla JavaScript (ES6+) managing the form inputs and the Haversine formula.
+Map Component: Leaflet.js integrated for visual location picking.
+Integration Layer (APIs):
+Supabase SDK: The bridge that allows the browser to talk directly to your database.
+Nominatim API: Used via fetch() for geocoding (search) and reverse geocoding (clicking on the map).
+Cloud Backend (Supabase):
+PostgreSQL Database: Storing the reminders table with columns for coordinates (lat, lng), task name, and priority.
+2. Application Workflow (Data Flow)
+
+You can represent the workflow as a linear path to show how data travels from a user's action to the cloud and back:
+Creation: User types a task \rightarrow selects a location on the map \rightarrow JS collects data.
+Persistence: JS calls supabase.from('reminders').insert() \rightarrow Data is stored in the cloud.
+Surveillance: Background watchPosition logic fetches user's live GPS \rightarrow Engine pulls saved coordinates from Supabase.
+Action: Haversine logic compares "Live GPS" to "Stored Task GPS" \rightarrow If Distance < 200m \rightarrow Trigger Alert.
 
 
 📊 Application Workflow
@@ -96,5 +114,6 @@ Namitha Biju: Frontend architecture, Leaflet.js map integration, and UI/UX desig
 Ditha J S: Database design with Supabase, API integration, and Haversine proximity logic.
 
 Made with ❤️ at TinkerHub
+
 
 
