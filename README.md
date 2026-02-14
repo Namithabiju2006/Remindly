@@ -69,7 +69,8 @@ Start the Project: Open the project in VS Code and use the Live Server extension
 Access: Open your browser to http://127.0.0.1:5500.
 Program Documentation
 Image 1
-<img width="830" height="1418" alt="1" src="https://github.com/user-attachments/assets/875b648b-510d-4108-8943-fbfaddd557ac" />
+<img width="1418" height="830" alt="11" src="https://github.com/user-attachments/assets/dd9fb2a8-0bad-4684-81df-dd4b68afa0a5" />
+
 Image 2
 <img width="1645" height="915" alt="2" src="https://github.com/user-attachments/assets/3d0252d3-2bb0-4cac-bc52-0f1a0c42c51e" />
 Image 3
@@ -95,4 +96,5 @@ Namitha Biju: Frontend architecture, Leaflet.js map integration, and UI/UX desig
 Ditha J S: Database design with Supabase, API integration, and Haversine proximity logic.
 
 Made with ❤️ at TinkerHub
+
 
