@@ -78,7 +78,11 @@ Image 3
 Image 4
 <img width="1642" height="758" alt="Screenshot 2026-02-14 083501" src="https://github.com/user-attachments/assets/6cbd2c93-d679-443d-a0a7-d8f70e31b511" />
 System Architecture Diagram Components
+
 "C:\Users\LENOVO\Downloads\WhatsApp Image 2026-02-14 at 10.25.13 AM.jpeg"
+
+
+
 A professional diagram for this stack usually consists of three main tiers:
 Client Layer (The Browser): * UI Component: Built with HTML5 and CSS3 (Glassmorphism design).
 Logic Component: Vanilla JavaScript (ES6+) managing the form inputs and the Haversine formula.
@@ -89,7 +93,13 @@ Nominatim API: Used via fetch() for geocoding (search) and reverse geocoding (cl
 Cloud Backend (Supabase):
 PostgreSQL Database: Storing the reminders table with columns for coordinates (lat, lng), task name, and priority.
 2. Application Workflow (Data Flow)
+
+
 ![WhatsApp Image 2026-02-14 at 10 45 05 AM](https://github.com/user-attachments/assets/a0737d1c-633d-47c6-8563-dd9ee290edb4)
+
+
+
+
 
 
 You can represent the workflow as a linear path to show how data travels from a user's action to the cloud and back:
@@ -98,6 +108,51 @@ Persistence: JS calls supabase.from('reminders').insert() \rightarrow Data is st
 Surveillance: Background watchPosition logic fetches user's live GPS \rightarrow Engine pulls saved coordinates from Supabase.
 Action: Haversine logic compares "Live GPS" to "Stored Task GPS" \rightarrow If Distance < 200m \rightarrow Trigger Alert.
 
+Additional Documentation: API Details
+API Documentation
+Base URL: https://ixlufxpcehhcpuftqiiw.supabase.co
+
+All requests require the following headers:
+
+apikey: https://ixlufxpcehhcpuftqiiw.supabase.co
+
+Authorization: https://ixlufxpcehhcpuftqiiw.supabase.co
+
+Endpoints
+1. GET /reminders
+Description: Fetches all saved reminders from the database to populate the dashboard grid.
+
+Parameters:
+
+select (string): Set to * to retrieve all columns (task, time, priority, lat, lng).
+
+order (string): Set to created_at.desc to show the newest reminders first.
+
+Response:
+
+2. POST /reminders
+Description: Creates a new smart reminder with geospatial coordinates.
+
+Request Body:
+
+Response:
+
+3. DELETE /reminders
+Description: Removes a reminder from the database when a user clicks the "Delete" button.
+
+Parameters:
+
+id (uuid): The unique identifier of the reminder to be removed.
+Application Workflow & Data Flow
+To visualize how these API calls interact with your "Smart Engine," refer to the data flow below:Client-Side: User picks a location $\rightarrow$ Leaflet.js extracts lat/lng.API Call: JavaScript sends a POST request to Supabase.Background Processing: remainderengine.js runs a GET request to pull all active reminder coordinates.Proximity Check: Live GPS is compared against fetched data using the Haversine formula.User Alert: If a match is found within 200m, a UI notification is triggered.
+System Architecture Interaction
+Your architecture is Serverless. Instead of a custom-built API server (Node/Express), your Frontend interacts directly with Supabase's auto-generated REST API.
+
+Persistence Layer: PostgreSQL (Supabase).
+
+Security: Supabase Row Level Security (RLS) ensures only valid requests modify the data.
+
+Performance: Data is fetched asynchronously to ensure the map remains smooth and responsive.
 
 
 📊 Application Workflow
@@ -117,6 +172,7 @@ Namitha Biju: Frontend architecture, Leaflet.js map integration, and UI/UX desig
 Ditha J S: Database design with Supabase, API integration, and Haversine proximity logic.
 
 Made with ❤️ at TinkerHub
+
 
 
 
