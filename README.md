@@ -10,7 +10,7 @@ Member 1: Namitha Biju - Rajiv Gandhi Institute of Technology
 
 Member 2: Ditha J S - Rajiv Gandhi Institute of Technology, Kottayam
 
-Hosted Project Link: 
+Hosted Project Link: https://namithabiju2006.github.io/Remindly/
 
 📖 Project Description
 Remindly addresses the "Environmental Disconnect" found in traditional productivity tools. Standard alarms often trigger at the wrong time (e.g., reminding you to buy groceries while you are still at your desk).
@@ -89,12 +89,15 @@ Nominatim API: Used via fetch() for geocoding (search) and reverse geocoding (cl
 Cloud Backend (Supabase):
 PostgreSQL Database: Storing the reminders table with columns for coordinates (lat, lng), task name, and priority.
 2. Application Workflow (Data Flow)
+![WhatsApp Image 2026-02-14 at 10 45 05 AM](https://github.com/user-attachments/assets/a0737d1c-633d-47c6-8563-dd9ee290edb4)
+
 
 You can represent the workflow as a linear path to show how data travels from a user's action to the cloud and back:
 Creation: User types a task \rightarrow selects a location on the map \rightarrow JS collects data.
 Persistence: JS calls supabase.from('reminders').insert() \rightarrow Data is stored in the cloud.
 Surveillance: Background watchPosition logic fetches user's live GPS \rightarrow Engine pulls saved coordinates from Supabase.
 Action: Haversine logic compares "Live GPS" to "Stored Task GPS" \rightarrow If Distance < 200m \rightarrow Trigger Alert.
+
 
 
 📊 Application Workflow
@@ -114,6 +117,7 @@ Namitha Biju: Frontend architecture, Leaflet.js map integration, and UI/UX desig
 Ditha J S: Database design with Supabase, API integration, and Haversine proximity logic.
 
 Made with ❤️ at TinkerHub
+
 
 
 
