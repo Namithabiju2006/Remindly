@@ -14,7 +14,12 @@ Member 2: Ditha J S - Rajiv Gandhi Institute of Technology, Kottayam
 Hosted Project Link: https://namithabiju2006.github.io/Remindly/
 
 📖 Project Description
-Remindly addresses the "Environmental Disconnect" found in traditional productivity tools. Standard alarms often trigger at the wrong time (e.g., reminding you to buy groceries while you are still at your desk).
+
+REMINDLY is a smart web-based reminder application that helps users manage tasks efficiently by combining time-based and location-based reminder features. The system allows users to create reminders, set priorities, choose a location on an interactive map, and receive notifications when the scheduled time arrives or when they reach the selected location.
+
+Unlike traditional reminder apps that only depend on time alerts, this project introduces a geofencing concept, where reminders are automatically triggered when the user enters a specified geographic area.
+
+The application is built using client-side technologies and runs entirely in the browser without requiring a backend server.
 
 The Problem:
 
@@ -173,6 +178,7 @@ Namitha Biju: Frontend architecture, Leaflet.js map integration, and UI/UX desig
 Ditha J S: Database design with Supabase, API integration, and Haversine proximity logic.
 
 Made with ❤️ at TinkerHub
+
 
 
 
